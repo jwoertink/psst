@@ -1,0 +1,11 @@
+name: psst
+version: 0.1.0
+
+authors:
+  - Jeremy Woertink
+
+description: Encrypt/Decrypt strings
+
+crystal: 0.35.1
+
+license: MIT

@@ -1,0 +1,11 @@
+.DS_Store
+crystal/lib/
+
+*.dwarf
+
+# Libraries don't need dependency lock
+# Dependencies will be locked in application that uses them
+crystal/shard.lock
+.env
+
+ruby/Gemfile.lock
