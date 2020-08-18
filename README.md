@@ -10,4 +10,10 @@ Thankfully, both Ruby and Crystal support OpenSSL, but it's a bit confusing to u
 
 ### Crystal
 
+Add to your shards.yml
+
+```yaml
+
+```
+
 ### Ruby

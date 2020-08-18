@@ -34,7 +34,7 @@ class Psst
     end
 
     def key
-      @key ||= OpenSSL::PKCS5.pbkdf2_hmac(password, salt, 100_000, :sha256, 256 // 8)
+      OpenSSL::PKCS5.pbkdf2_hmac(password, salt, 100_000, :sha256, 256 // 8)
     end
   end
 
