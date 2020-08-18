@@ -13,7 +13,26 @@ Thankfully, both Ruby and Crystal support OpenSSL, but it's a bit confusing to u
 Add to your shards.yml
 
 ```yaml
+dependencies:
+  psst:
+    github: jwoertink/psst
+    branch: master
+```
 
+In your Crystal
+
+```crystal
+require "psst/crystal/src/psst"
+
+Psst.config do |c|
+  # must be 8 bytes
+  c.salt = "12345678"
+  # must be 16 bytes
+  c.iv = "1234567890abcdef"
+  c.password = "shhsecret"
+end
+
+puts Psst.new.decrypt("iREBySRcG8bc80YZoOpB3Q==")
 ```
 
 ### Ruby
