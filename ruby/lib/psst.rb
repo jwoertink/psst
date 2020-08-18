@@ -6,14 +6,14 @@ class Psst
     attr_reader :salt, :iv, :password
 
     def salt=(value)
-      if value.nil? || value.length != 8
+      if value.nil? || value.bytesize != 8
         raise "Salt must be exactly 8 bytes. Use `SecureRandom.random_bytes(8)`."
       end
       @salt = value
     end
 
     def iv=(value)
-      if value.nil? || value.length != 16
+      if value.nil? || value.bytesize != 16
         raise "The IV must be exactly 16 bytes. Use `SecureRandom.random_bytes(16)`."
       end
       @iv = value
@@ -21,7 +21,7 @@ class Psst
 
     def password=(value)
       if value.nil? || value.length < 8
-        raise "Your password must be 8 or more bytes"
+        raise "Your password must be 8 or more characters"
       end
       @password = value
     end

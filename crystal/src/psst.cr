@@ -13,14 +13,14 @@ class Psst
     end
 
     def salt=(value : String)
-      if value.size != 8
+      if value.bytesize != 8
         raise "Salt must be exactly 8 bytes. Use `SecureRandom.random_bytes(8)`."
       end
       @salt = value
     end
 
     def iv=(value : String)
-      if value.size != 16
+      if value.bytesize != 16
         raise "The IV must be exactly 16 bytes. Use `SecureRandom.random_bytes(16)`."
       end
       @iv = value
@@ -28,7 +28,7 @@ class Psst
 
     def password=(value : String)
       if value.size < 8
-        raise "Your password must be 8 or more bytes"
+        raise "Your password must be 8 or more characters"
       end
       @password = value
     end
