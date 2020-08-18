@@ -4,7 +4,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 
 Gem::Specification.new do |spec|
   spec.name          = "psst"
-  spec.version       = "0.1.0"
+  spec.version       = "0.1.0.0"
   spec.authors       = ["Jeremy Woertink"]
   spec.email         = ["jeremywoertink@gmail.com"]
   spec.summary       = %q{Encrypt/Decrypt strings}
