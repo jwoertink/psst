@@ -32,7 +32,29 @@ Psst.config do |c|
   c.password = "shhsecret"
 end
 
+token = Psst.new.encrypt("secret message")
 puts Psst.new.decrypt("iREBySRcG8bc80YZoOpB3Q==")
 ```
 
 ### Ruby
+
+Add to your Gemfile
+
+```ruby
+gem 'psst', git: 'https://github.com/jwoertink/psst.git'
+```
+
+In your Ruby
+
+```ruby
+Psst.config do |c|
+  # must be 8 bytes
+  c.salt = "12345678"
+  # must be 16 bytes
+  c.iv = "1234567890abcdef"
+  c.password = "shhsecret"
+end
+
+token = Psst.new.encrypt("secret message")
+puts Psst.new.decrypt("iREBySRcG8bc80YZoOpB3Q==")
+```
